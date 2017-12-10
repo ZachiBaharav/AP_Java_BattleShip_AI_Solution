@@ -275,7 +275,7 @@ public class Display extends JComponent {
         class AvgListener implements ActionListener {
 
             public void actionPerformed(ActionEvent e) {
-                final int NUM_OF_ITERATIONS = 100;
+                final int NUM_OF_ITERATIONS = 1000;
                 double sumTurns = 0;
 
                 for (int ii = 0; ii < NUM_OF_ITERATIONS; ++ii) {

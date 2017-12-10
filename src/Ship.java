@@ -38,6 +38,16 @@ public class Ship {
             hit[ii] = false;
         }
     }
+    // 
+    public int[][] coords() {
+        int[][] c = new int[l][2];
+        for (int ii=0; ii<l ; ++ii)
+        {
+            c[ii][0] = rows[ii];
+            c[ii][1] = cols[ii];
+        }
+        return c;
+    }
     
     public void updateHit(int r, int c)
     {

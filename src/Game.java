@@ -67,8 +67,13 @@ public class Game {
             
             boolean sunkAShip ;
             sunkAShip = (s==null) ? false : s.isSunk();
-            p.sunkAShip(r,c,sunkAShip);
-
+            
+            int[][] sEmpty={{},{}};
+            if (sunkAShip)
+                p.sunkAShip(r,c,sunkAShip,s.coords());
+            else
+                p.sunkAShip(r,c,sunkAShip,sEmpty);
+            
             
             //printBoard();
             if (!loopMode)
@@ -108,6 +113,10 @@ public class Game {
             r = (int) rand.nextInt(ROWS);   // nextInt gets integer values between [0,n)
             c = (int) rand.nextInt(COLS);
             d = (int) rand.nextInt(2);      // 0-down, 1-right
+            
+//QQQ
+            if (l==2){r=5; c=5; d=1;}
+
         } while (!isFreeSpace(r,c,l,d));
         
         Ship s = new Ship(str,l);
